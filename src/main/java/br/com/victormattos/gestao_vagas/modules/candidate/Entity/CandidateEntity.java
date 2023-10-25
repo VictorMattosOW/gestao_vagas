@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -15,6 +16,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Length;
 
 @Data
+@NoArgsConstructor
 @Entity(name = "candidate")
 public class CandidateEntity {
 
@@ -37,12 +39,4 @@ public class CandidateEntity {
 
   @CreationTimestamp
   private LocalDateTime createAt;
-
-  public String getUsername() {
-    return this.username;
-  }
-
-  public String getEmail() {
-    return this.email;
-  }
 }

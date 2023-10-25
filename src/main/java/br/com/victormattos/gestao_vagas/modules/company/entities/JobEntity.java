@@ -14,9 +14,11 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity(name = "job")
 @Data
+@NoArgsConstructor
 public class JobEntity {
   @Id
   @GeneratedValue(strategy = GenerationType.UUID)

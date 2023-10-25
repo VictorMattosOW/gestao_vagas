@@ -13,9 +13,11 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Pattern;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity(name = "company")
 @Data
+@NoArgsConstructor
 public class CompanyEntity {
 
   @Id
@@ -36,12 +38,4 @@ public class CompanyEntity {
 
   @CreationTimestamp
   private LocalDateTime createAt;
-
-  public String getUsername() {
-    return this.username;
-  }
-
-  public String getEmail() {
-    return this.email;
-  }
 }
