@@ -20,8 +20,10 @@ public class SecurityConfig {
     http.csrf(csrf -> csrf.disable())
         .authorizeHttpRequests(auth -> {
           auth.requestMatchers("/candidate/").permitAll()
-              .requestMatchers("/company").permitAll()
-              .requestMatchers("/auth/company").permitAll();
+              .requestMatchers("/company/").permitAll()
+              .requestMatchers("/auth/company").permitAll()
+              .requestMatchers("/swagger-ui/**", "/swagger-ui/index.html", "/v3/api-docs/**", "/api/v1/auth/**", "/v3/api-docs.yaml")
+              .permitAll();
           auth.anyRequest().authenticated();
         })
         .addFilterBefore(securityFilter, BasicAuthenticationFilter.class);
